@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Button, Container, Menu, Sticky } from "semantic-ui-react";
+import { Button, Container, Menu, Sticky, Modal } from "semantic-ui-react";
 import AMB_logo from "../res/AMB_logo.png";
-import header_AMB from "../res/header_AMB.png";
 import { Link } from "react-router-dom";
+import LoginModal from "./LoginModal";
 
 class Topbar extends Component {
   state = {};
+
+
 
   render() {
     return (
@@ -23,9 +25,7 @@ class Topbar extends Component {
               <img width="80" height="80" src={AMB_logo}></img>
             </Link>
             <Menu.Item position="right">
-              <Button inverted secondary as="a">
-                Log in
-              </Button>
+              <LoginModal />
               <Button as={Link} inverted secondary to="/register">
                 Sign Up
               </Button>
