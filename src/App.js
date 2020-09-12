@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Topbar from "./components/Topbar";
 import Home from "./components/Home";
-import Register from "./components/Register";
+import { Register } from "./components/Register";
 import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
 

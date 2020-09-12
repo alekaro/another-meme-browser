@@ -1,14 +1,14 @@
-import React from "react";
-import { Container, Modal, Button, Header, Image, Form, Input } from "semantic-ui-react";
+import React, { ChangeEvent } from "react";
+import { Container, Modal, Button, Header, Image, Form, Input, InputOnChangeData } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 export const LoginModal = () => {
   const [open, setOpen] = React.useState(false)
-  const [login, setLogin] = React.useState();
-  const [password, setPassword] = React.useState();
+  const [login, setLogin] = React.useState('');
+  const [password, setPassword] = React.useState('');
 
-  const handleChange = (e, { name, value }) => {
-    name = value
+  const handleChange = (e: ChangeEvent<HTMLInputElement>, data: InputOnChangeData) => {
+    setPassword(data.value);
   }
 
   const handleSubmit = () => {

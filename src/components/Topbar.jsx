@@ -3,12 +3,10 @@ import "semantic-ui-css/semantic.min.css";
 import { Button, Container, Menu, Sticky, Modal } from "semantic-ui-react";
 import AMB_logo from "../res/AMB_logo.png";
 import { Link } from "react-router-dom";
-import LoginModal from "./LoginModal";
+import { LoginModal } from "./LoginModal";
 
 class Topbar extends Component {
   state = {};
-
-
 
   render() {
     return (
