@@ -7,11 +7,12 @@ const Sidebar = () => {
   const styles = {
     backgroundImage: "linear-gradient(#333333, #000000)",
     height: "85vh",
+    width: "100%"
   };
 
   return (
-    <Container fluid style={styles}>
-      <List horizontal style={{ marginTop: "20px" }}>
+    <div style={styles}>
+      <List horizontal style={{ margin: "20px", marginBottom: "0px" }}>
         <List.Item as="a">
           <h3>TOP</h3>
         </List.Item>
@@ -25,7 +26,7 @@ const Sidebar = () => {
       <Divider horizontal inverted>
         CATEGORIES
       </Divider>
-    </Container>
+    </div>
   );
 
 }
