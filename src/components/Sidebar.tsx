@@ -1,13 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Button, List, Container, Divider } from "semantic-ui-react";
+import { List, Divider } from "semantic-ui-react";
 
-const Sidebar = () => {
-
+export const Sidebar = () => {
   const styles = {
     backgroundImage: "linear-gradient(#333333, #000000)",
     height: "85vh",
-    width: "100%"
+    width: "100%",
   };
 
   return (
@@ -28,6 +27,4 @@ const Sidebar = () => {
       </Divider>
     </div>
   );
-
-}
-export default Sidebar;
+};

@@ -1,46 +1,51 @@
 import React, { ChangeEvent } from "react";
-import { Container, Modal, Button, Header, Image, Form, Input, InputOnChangeData } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { Modal, Button, Form, InputOnChangeData } from "semantic-ui-react";
 
 export const LoginModal = () => {
-  const [open, setOpen] = React.useState(false)
-  const [login, setLogin] = React.useState('');
-  const [password, setPassword] = React.useState('');
+  const [open, setOpen] = React.useState(false);
+  const [login, setLogin] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>, data: InputOnChangeData) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement>,
+    data: InputOnChangeData
+  ) => {
     setPassword(data.value);
-  }
+  };
 
-  const handleSubmit = () => {
-
-  }
+  const handleSubmit = () => {};
 
   return (
-    <Modal onClose={() => setOpen(false)}
-          onOpen={() => setOpen(true)}
-          open={open}
-          trigger={<Button inverted secondary>Log in</Button>}
-        >
-        <Modal.Content>
-          <Form>
-            <Form.Group>
-              <Form.Input
-                placeholder='Login'
-                name='login'
-                value={login}
-                onChange={handleChange}
-              />
-              <Form.Input
-                placeholder='Password'
-                name='password'
-                value={password}
-                onChange={handleChange}
-              />
-              <Form.Button content="Submit" />
-            </Form.Group>
-          </Form>
-        </Modal.Content>
-          {/* <Modal.Header>Select a Photo</Modal.Header>
+    <Modal
+      onClose={() => setOpen(false)}
+      onOpen={() => setOpen(true)}
+      open={open}
+      trigger={
+        <Button inverted secondary>
+          Log in
+        </Button>
+      }
+    >
+      <Modal.Content>
+        <Form>
+          <Form.Group>
+            <Form.Input
+              placeholder="Login"
+              name="login"
+              value={login}
+              onChange={handleChange}
+            />
+            <Form.Input
+              placeholder="Password"
+              name="password"
+              value={password}
+              onChange={handleChange}
+            />
+            <Form.Button content="Submit" />
+          </Form.Group>
+        </Form>
+      </Modal.Content>
+      {/* <Modal.Header>Select a Photo</Modal.Header>
           <Modal.Content image>
           <Image size='medium' src='/images/avatar/large/rachel.png' wrapped />
           <Modal.Description>
@@ -64,6 +69,6 @@ export const LoginModal = () => {
             positive
           />
         </Modal.Actions> */}
-      </Modal>
+    </Modal>
   );
-}
+};

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Button, Container, Menu, Sticky, Modal } from "semantic-ui-react";
+import { Button, Container, Menu, Sticky } from "semantic-ui-react";
 import AMB_logo from "../res/AMB_logo.png";
 import { Link } from "react-router-dom";
 import { LoginModal } from "./LoginModal";
+import { RegisterModal } from "./RegisterModal";
 
 class Topbar extends Component {
   state = {};
@@ -20,13 +21,16 @@ class Topbar extends Component {
         >
           <Container fluid style={{}}>
             <Link to="/" className="m-1">
-              <img width="80" height="80" src={AMB_logo}></img>
+              <img
+                width="80"
+                height="80"
+                src={AMB_logo}
+                alt="Website logo"
+              ></img>
             </Link>
             <Menu.Item position="right">
               <LoginModal />
-              <Button as={Link} inverted secondary to="/register">
-                Sign Up
-              </Button>
+              <RegisterModal />
             </Menu.Item>
           </Container>
         </Menu>

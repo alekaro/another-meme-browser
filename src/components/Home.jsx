@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Sidebar from "./Sidebar";
+import { Sidebar } from "./Sidebar";
 import Wall from "./Wall";
 import { Grid } from "semantic-ui-react";
 
