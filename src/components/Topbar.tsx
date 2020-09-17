@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "semantic-ui-css/semantic.min.css";
-import { Button, Container, Menu, Sticky } from "semantic-ui-react";
+import { Container, Menu, Sticky } from "semantic-ui-react";
 import AMB_logo from "../res/AMB_logo.png";
 import { Link } from "react-router-dom";
 import { LoginModal } from "./LoginModal";

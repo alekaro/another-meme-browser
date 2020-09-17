@@ -5,7 +5,6 @@ import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
-import BookList from "./components/BookList";
 
 // apollo client setup
 const client = new ApolloClient({
@@ -25,7 +24,6 @@ class App extends Component {
         <BrowserRouter>
           <div style={this.styles}>
             <Topbar />
-            <BookList />
             <Route exact path="/" component={Home} />
           </div>
         </BrowserRouter>
