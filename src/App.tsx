@@ -25,7 +25,6 @@ class App extends Component {
         <BrowserRouter>
           <div style={this.styles}>
             <Topbar />
-            <BookList />
             <Route exact path="/" component={Home} />
           </div>
         </BrowserRouter>
