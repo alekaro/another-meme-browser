@@ -10,7 +10,7 @@ class MainContainer extends Component {
   styles = {
     fontSize: 10,
     fontWeight: "bold",
-  };
+  } as React.CSSProperties;
 
   // constructor() {
   //   super();
@@ -26,7 +26,7 @@ class MainContainer extends Component {
   //    */
   // }
 
-  handleIncrement = (product) => {
+  handleIncrement = (product: any) => {
     console.log(product);
 
     this.setState({ count: this.state.count + 1 });

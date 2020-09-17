@@ -17,7 +17,7 @@ class App extends Component {
     backgroundColor: "#000000",
     height: "100vh",
     fontWeight: "bold",
-  };
+  } as React.CSSProperties;
 
   render() {
     return (
