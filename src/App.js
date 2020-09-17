@@ -4,6 +4,14 @@ import Home from "./components/Home";
 import { Register } from "./components/Register";
 import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+import BookList from "./components/BookList";
+
+// apollo client setup
+const client = new ApolloClient({
+  uri: "http://87.99.45.234:4000/graphql",
+});
 
 class App extends Component {
   styles = {
@@ -14,13 +22,16 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
-        <div style={this.styles}>
-          <Topbar />
-          <Route exact path="/" component={Home} />
-          <Route path="/register" component={Register} />
-        </div>
-      </BrowserRouter>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <div style={this.styles}>
+            <Topbar />
+            <BookList />
+            <Route exact path="/" component={Home} />
+            <Route path="/register" component={Register} />
+          </div>
+        </BrowserRouter>
+      </ApolloProvider>
     );
   }
 }
