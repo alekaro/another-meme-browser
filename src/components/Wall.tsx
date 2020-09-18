@@ -6,7 +6,7 @@ class Wall extends Component {
 
   styles = {
     backgroundColor: "#999999",
-    minHeight: "100px",
+    minHeight: "200px",
   };
 
   render() {
