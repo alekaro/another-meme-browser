@@ -2,8 +2,14 @@ import React, { Component } from "react";
 import { graphql } from "react-apollo";
 import { getBooksQuery } from "../queries/queries";
 import { useQuery } from "react-apollo";
+import { List } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+
+// components
+import { BookDetails } from "./BookDetails";
 
 const BookList = () => {
+  const [selected, setSelected] = React.useState<any>(null);
   const { loading, error, data } = useQuery(getBooksQuery);
 
   const displayBooks = () => {
@@ -12,16 +18,25 @@ const BookList = () => {
     } else {
       return data.books.map((book: any) => {
         return (
-          <li style={{ color: "white" }} key={book.id}>
+          <List.Item
+            as={Link}
+            key={book.id}
+            onClick={(e) => {
+              setSelected(book.id);
+            }}
+          >
             {book.name}
-          </li>
+          </List.Item>
         );
       });
     }
   };
   return (
     <div>
-      <ul id="book-list">{displayBooks()}</ul>
+      <List inverted link size="big" id="book-list">
+        {displayBooks()}
+      </List>
+      <BookDetails bookId={selected} />
     </div>
   );
 };

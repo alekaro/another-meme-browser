@@ -6,7 +6,11 @@ import {
   InputOnChangeData,
   Modal,
 } from "semantic-ui-react";
-import { getAuthorsQuery, addBookMutation } from "../queries/queries";
+import {
+  getAuthorsQuery,
+  addBookMutation,
+  getBooksQuery,
+} from "../queries/queries";
 import { useQuery, useMutation } from "react-apollo";
 
 export const RegisterModal = () => {
@@ -38,6 +42,7 @@ export const RegisterModal = () => {
     e.preventDefault();
     addBookMutationFunction({
       variables: { name: name, genre: genre, authorId: authorId },
+      refetchQueries: [{ query: getBooksQuery }],
     });
     console.log({ login, password, name, genre, authorId });
   };
